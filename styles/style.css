@@ -3,7 +3,6 @@
 
 /* 숨김 콘텐츠 */
 .a11y-hidden {
-  background-color: red;
   position: absolute;
   width: 1px;
   height: 1px;
@@ -30,6 +29,7 @@ a {
 
 /* 본문 스타일 */
 body {
+  /* em, rem 단위를 사용해보기 */
   font-size: 1.4rem;
   color: #212121;
   background: #ccc
@@ -54,7 +54,6 @@ body {
 .header {
   background: #fff;
   padding: 0 30px;
-
   border-radius: 0 0 15px 15px;
   position: relative;
 }
@@ -70,10 +69,10 @@ body {
 .member {
   text-align: right;
   padding: 4px 0;
-  /* position 속성을 활용하여 .member 영역을 오른쪽으로10px 만큼 이동하기
-  position: relative;
+  /* position 속성을 활용하여 .member 영역을 오른쪽으로 10px 만큼 이동하기 */
+  /* position: relative;
   right: -10px; */
-  /* transform 속성을 활용하여 .member 영역을 오른쪽으로10px 만큼 이동하기*/
+  /* transform 속성을 활용하여 .member 영역을 오른쪽으로 10px 만큼 이동하기 */
   transform: translateX(10px);
 }
 
@@ -96,13 +95,13 @@ body {
   margin-right: 4px;
 }
 
-/* 메인 메뉴  */
+/* 메인 메뉴 */
 .navigation {
   padding-bottom: 80px;
 }
 
 .menu {
-  border-top: 2px solid #212121;
+  border-top: 2px solid currentColor;
   background: #e85e2c
     linear-gradient(
       to bottom,
@@ -114,14 +113,19 @@ body {
   border-radius: 0 0 5px 5px;
   padding-left: 230px;
   height: 47px;
+  position: relative;
+}
+
+.menu > li:nth-child(-n + 3) {
+  position: relative;
 }
 
 .menu-item {
-  position: relative;
-  border-left: 2px solid #fff;
   float: left;
+  border-left: 2px solid #fff;
 }
 
+/* 구체성 -> 10점 */
 .menu-button {
   border: 0;
   background: transparent;
@@ -133,30 +137,45 @@ body {
   text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
 }
 
+/* 구체성 -> 20점 */
 .is-active .menu-button {
   color: #ff0;
 }
 
 .is-active .menu-button::after {
-  display: block;
   content: '';
-  border-top: 2px solid #212121;
+  display: block;
+  border-top: 2px solid #000;
 }
 
 .sub-menu {
   background-color: pink;
   position: absolute;
-  left: 0;
   top: 47px;
   display: none;
 }
 
+.menu-html,
+.menu-css,
+.menu-standards {
+  left: 0;
+}
+
+.menu-accessibility,
+.meun-qna,
+.menu-archive {
+  right: 0;
+}
+
 .is-active .sub-menu {
   display: block;
+  white-space: nowrap;
 }
 
 .sub-menu li {
   display: inline-block;
+  padding-left: 1em;
+  background-color: gold;
 }
 
 /* 비주얼 */
@@ -198,10 +217,10 @@ body {
 }
 /* 푸터 */
 .footer {
-  background: gray;
-}
-.footer-inner {
   background: #ccc
     linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%);
+}
+.footer-inner {
+  background: silver;
   height: 15vh;
 }

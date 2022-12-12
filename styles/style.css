@@ -383,7 +383,6 @@ body {
 }
 /* 유효성 검사 배너 */
 .validation-list {
-  background-color: yellow;
   margin-top: 25px;
 }
 
